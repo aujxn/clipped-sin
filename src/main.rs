@@ -56,9 +56,12 @@ fn main() {
 
     let device = rodio::default_output_device().unwrap();
     let sink = rodio::Sink::new(&device);
+
+    /*
     let file = File::open("sine.wav").unwrap();
     let source = rodio::Decoder::new(BufReader::new(file)).unwrap();
     sink.append(source);
+    */
 
     let file = File::open("clipped.wav").unwrap();
     let source = rodio::Decoder::new(BufReader::new(file)).unwrap();
